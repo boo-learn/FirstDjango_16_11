@@ -14,6 +14,7 @@ items = [
     {"id": 5, "name": "Coca-cola 1 литр", "quantity": 12},
     {"id": 7, "name": "Картофель фри", "quantity": 0},
     {"id": 8, "name": "Кепка", "quantity": 124},
+    {"id": 9, "name": "Яблоко", "quantity": 124000},
 ]
 
 
@@ -41,5 +42,17 @@ def item_page(request, id):
             result = f"""
             <h2>Название: {item['name']}</h2>
             <div>Количество: {item['quantity']}</div>
+            <a href='/items'>Назад</a>
             """
             return HttpResponse(result)
+
+    return HttpResponse(f"Товар с id={id} не найден")
+
+
+def items_list(request):
+    result = "<h1>Список товаров</h1> <ol>"
+    for item in items:
+        result += f"<a href='/item/{item['id']}'><li>{item['name']}</li></a>"
+    result += "</ol>"
+
+    return HttpResponse(result)

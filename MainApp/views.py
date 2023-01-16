@@ -20,7 +20,10 @@ items = [
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    context = {
+        "name": "Евгений"
+    }
+    return render(request, "index.html", context)
 
 
 def about(request):
@@ -46,9 +49,7 @@ def item_page(request, id):
 
 
 def items_list(request):
-    result = "<h1>Список товаров</h1> <ol>"
-    for item in items:
-        result += f"<a href='/item/{item['id']}'><li>{item['name']}</li></a>"
-    result += "</ol>"
-
-    return HttpResponse(result)
+    context = {
+        "items": items
+    }
+    return render(request, "items_list.html", context)

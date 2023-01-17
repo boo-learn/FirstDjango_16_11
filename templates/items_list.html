@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        li{
+            display: inline-block;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        a:hover, a{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 <nav>
@@ -11,7 +21,12 @@
 <h1>Список товаров</h1>
 <ol>
     {% for item in items %}
-        <a href="/item/{{ item.id }}"> <li>{{ item.name }}</li></a>
+        <a href="/item/{{ item.id }}">
+            <li>
+                <div>{{ item.name }}</div>
+                <div>Описание товара</div>
+            </li>
+        </a>
     {% endfor %}
 </ol>
 </body>

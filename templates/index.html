@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .test{
-            color: red;
-        }
-    </style>
-</head>
-<body>
-<nav>
-    /<a href="/">Home</a>/<a href="/items">Items</a>/<a href="">Contacts</a>
-</nav>
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Добро пожаловать!</h1>
 <a href="/items">Список товаров</a>
-</body>
-</html>
+{% endblock %}

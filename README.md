@@ -12,4 +12,4 @@
 
 # Дополнительные инструменты
 
-1. `python manage.py shel_plus --ipython` - запуск терминала с контекстом django
+1. `python manage.py shell_plus --ipython` - запуск терминала с контекстом django

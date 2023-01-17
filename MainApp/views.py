@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from MainApp.models import Item
 
 user_info = {
     "name": "Евгений",
@@ -47,6 +48,7 @@ def item_page(request, id):
 
 
 def items_list(request):
+    items = Item.objects.all()
     context = {
         "items": items
     }
